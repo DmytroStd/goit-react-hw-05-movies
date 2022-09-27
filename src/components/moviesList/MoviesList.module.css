@@ -1,0 +1,41 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img {
+    width: 200px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.name {
+    color: #f2317f;
+    text-align: center;
+}
+
+.desc {
+    text-align: center;
+}
+
+.item {
+    width: 200px;
+}
+
+.item:hover {
+    transform: scale(1.03);
+}
