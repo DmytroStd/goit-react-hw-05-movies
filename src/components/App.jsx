@@ -4,7 +4,7 @@ import { Movies } from 'pages/Movies';
 import MoviesDetails from 'pages/MoviesDetails';
 import { NotFound } from 'pages/NotFound';
 // import Header from './header/Header';
-import { Header, Link } from './App.styled';
+import { Header } from './App.styled';
 import styles from './App.module.css';
 
 export const App = () => {
