@@ -10,15 +10,11 @@ export default function MoviesDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
-  //   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     if (!movieId) return;
-    // setLoading(true);
     fetchGetMovieDetails(movieId)
       .then(setMovie)
       .catch(error => console.log(error));
-    //   .finally(setLoading(false));
   }, [movieId]);
 
   const location = useLocation();
