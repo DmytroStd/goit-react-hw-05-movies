@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getSearch } from '../API/Api';
+import { fetchGetSearch } from '../API/Api';
 import MovieList from '../moviesList/MoviesList';
+import Notiflix from 'notiflix';
 import styles from './SearchBar.module.css';
 import PropTypes from 'prop-types';
 
@@ -13,7 +14,7 @@ export default function SearchBar() {
   const handleSubmit = e => {
     e.preventDefault();
     if (search?.trim() === '') {
-      return alert('Try again');
+      return Notiflix.Notify.warning('please, enter valid movie name');
     }
     const form = e.currentTarget;
     setSearchParams({ search: form.elements.search.value });
@@ -22,7 +23,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     if (search) {
-      getSearch(search)
+      fetchGetSearch(search)
         .then(data => setMovies(data.results))
         .catch(error => console.log(error));
     }
@@ -33,12 +34,12 @@ export default function SearchBar() {
       <div className={styles.searchbar}>
         <form className={styles.searchForm} onSubmit={handleSubmit}>
           <label className={styles.label}>
-            <button type="submit" className={styles.searchFormButton}>
+            <button type="submit" className={styles.searchButton}>
               <span className={styles.searchFormButtonLabel}>search</span>
             </button>
 
             <input
-              className={styles.SearchFormInput}
+              className={styles.searchInput}
               type="text"
               autoComplete="off"
               name="search"
@@ -54,5 +55,5 @@ export default function SearchBar() {
 }
 
 SearchBar.propType = {
-  getSearch: PropTypes.func,
+  fetchGetSearch: PropTypes.func,
 };

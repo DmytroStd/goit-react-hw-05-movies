@@ -1,0 +1,61 @@
+    .container {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid orangered;
+    }
+
+    .movieBox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .infoBox {
+        display: flex;
+    }
+
+    .descBox {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .movieGallery {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img {
+        margin-right: 50px;
+    }
+
+    .genresTitle {
+        margin: 0;
+    }
+
+    .genresList {
+
+        padding: 0;
+
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .userItem {
+        margin: 0;
+        margin-bottom: 30px;
+        font-size: 13px;
+    }
+
+    .genresItem {
+        list-style: none;
+        margin: 0;
+        padding-top: 5px;
+
+        font-size: 13px;
+
+    }
+
+    .first {
+        color: orangered;
+    }

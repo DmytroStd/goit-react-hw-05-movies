@@ -1,59 +1,50 @@
-import { Link, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
+import { useState, useEffect, Suspense } from 'react';
 import { fetchGetMovieDetails } from 'components/API/Api';
-import Moment from 'react-moment';
+import MoviesDetailsItem from 'components/movieDetails/MoviesDetailsItem';
+import Button from 'components/button/Button';
+import styles from '../components/moviesList/MoviesList.module.css';
 import PropTypes from 'prop-types';
 
 export default function MoviesDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
-  //   const realeseYear = release_date?.slice(0, 4);
-  //   const votesPercentage = Math.round(vote_average * 10);
   //   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (!movieId) return;
     // setLoading(true);
     fetchGetMovieDetails(movieId)
       .then(setMovie)
       .catch(error => console.log(error));
     //   .finally(setLoading(false));
   }, [movieId]);
+
+  const location = useLocation();
+  const from = location.state.from;
+
   return (
     movie && (
       <>
-        <button type="button">go back</button>
-        <div>
-          <div>
-            <h2>
-              {movie.original_title}(
-              <Moment format="YYYY">{movie.release_date}</Moment>)
-            </h2>
-            <p>user score: {Math.round(movie.vote_average * 10)}%</p>
-            <h3>overview</h3>
-            <p>{movie.overview}</p>
-            <h3>genres</h3>
-            <p>
-              {movie.genres?.map(({ id, name }) => (
-                <li key={id}>{name}</li>
-              ))}
-            </p>
+        <Button text="go back" />
+        <MoviesDetailsItem movie={movie} />
+        <div className={styles.addBox}>
+          {' '}
+          <h3 className={styles.secondaryTitle}>
+            <span className={styles.first}>a</span>dditional information
+          </h3>
+          <div className={styles.addInfo}>
+            <Link className={styles.link} state={{ from }} to="cast">
+              cast
+            </Link>
+            <Link className={styles.link} state={{ from }} to="reviews">
+              reviews
+            </Link>
           </div>
-          <img
-            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-            alt={movie.original_title}
-            width={300}
-          />
-        </div>
-
-        <div>
-          <h3>additional information</h3>
-          <Link className="{styles.link}" to={`cast`}>
-            cast
-          </Link>
-          <Link className="{styles.link}" to={`rewiews`}>
-            rewiews
-          </Link>
+          <Suspense fallback={<h1>loading...</h1>}>
+            <Outlet />
+          </Suspense>
         </div>
       </>
     )

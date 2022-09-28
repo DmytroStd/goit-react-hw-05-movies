@@ -2,27 +2,29 @@ import { useState, useEffect } from 'react';
 import { fetchTrendMovie } from 'components/API/Api';
 import MovieList from 'components/moviesList/MoviesList';
 import PropTypes from 'prop-types';
+import styles from '../components/moviesList/MoviesList.module.css';
 
-const Home = () => {
+export default function Home() {
   const [movies, setTrendMovies] = useState([]);
 
   useEffect(() => {
-    // setLoading(true);
     fetchTrendMovie()
       .then(data => setTrendMovies(data.results))
       .catch(error => console.log(error));
-    // .finally(setLoading(false));
   }, []);
 
   return (
-    <div>
-      <h1>trending today</h1>
-      {<MovieList movies={movies} />}
-    </div>
+    <>
+      <div>
+        <h1 className={styles.heroTitle}>
+          <span className={styles.first}>t</span>rending{' '}
+          <span className={styles.first}>t</span>oday
+        </h1>
+        {<MovieList movies={movies} />}
+      </div>
+    </>
   );
-};
-
-export default Home;
+}
 
 Home.propTypes = {
   movies: PropTypes.arrayOf(
@@ -33,3 +35,11 @@ Home.propTypes = {
     })
   ),
 };
+
+// useEffect(() => {
+//   // setLoading(true);
+//   fetchTrendMovie()
+//     .then(data => setTrendMovies(data.results))
+//     .catch(error => console.log(error));
+//   // .finally(setLoading(false));
+// }, []);

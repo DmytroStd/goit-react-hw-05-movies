@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    margin-bottom: 16px;
+    padding-left: 34px;
+    border-bottom: 1px solid aliceblue;
+}
+
+.nav {
+    display: flex;
+}
+
+.navLink {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 500;
+    border: 1px solid transparent;
+    ;
+}
+
+.navLink:hover {
+    border: 1px solid orangered;
+    ;
+}
+
+.navLink.active {
+    color: orangered;
+}

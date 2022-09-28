@@ -1,0 +1,28 @@
+.link {
+    display: flex;
+}
+
+.img {
+    border-radius: 5px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    width: 200px;
+}
+
+.desc {
+    font-size: 12px
+}

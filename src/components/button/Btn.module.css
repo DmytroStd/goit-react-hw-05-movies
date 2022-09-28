@@ -1,0 +1,18 @@
+.btn {
+    height: 30px;
+    margin-left: 50px;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    border-color: aliceblue;
+    background-color: rgb(31, 30, 30);
+    color: orangered;
+    /* background-color: orangered; */
+    /* color: aliceblue; */
+}
+
+.btn:hover {
+    background-color: orangered;
+    color: aliceblue;
+    cursor: pointer;
+    border-color: orangered;
+}

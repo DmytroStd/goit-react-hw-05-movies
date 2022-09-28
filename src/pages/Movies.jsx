@@ -1,9 +1,9 @@
 import SearchBar from 'components/searchBar/SearchBar';
 
-export const Movies = handleSubmit => {
+export default function Movies(handleSubmit) {
   return (
     <div>
       <SearchBar handleSubmit={handleSubmit} />
     </div>
   );
-};
+}
