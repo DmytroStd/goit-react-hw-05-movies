@@ -1,7 +1,6 @@
 import { fetchGetMovieVideo } from 'components/API/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 export default function OfficialTrailer() {
   const { movieId } = useParams();

@@ -15,7 +15,7 @@ export default function Reviews() {
       })
       .catch(error => console.log(error));
   }, [movieId, reviews]);
-
+  
   return (
     reviews && (
       <ul className={styles.list}>

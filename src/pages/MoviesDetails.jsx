@@ -18,7 +18,7 @@ export default function MoviesDetails() {
   }, [movieId]);
 
   const location = useLocation();
-  const from = location.state.from;
+  const from = location.state?.from;
 
   return (
     movie && (

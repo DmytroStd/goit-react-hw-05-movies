@@ -4,6 +4,7 @@ import OfficialTrailer from 'components/videoTrailer/videoTrailer';
 import styles from './MoviesDetailsItem.module.css';
 
 export default function MoviesDetailsItem({ movie }) {
+  console.log(movie);
   return (
     movie && (
       <div className={styles.container}>
