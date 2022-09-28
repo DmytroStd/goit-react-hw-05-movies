@@ -62,4 +62,5 @@ Cast.propTypes = {
   name: PropTypes.string,
   profile_path: PropTypes.string,
   character: PropTypes.string,
+  error: PropTypes.string,
 };
