@@ -1,4 +1,4 @@
-import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
+import { NavLink, useParams, useLocation, Outlet } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { fetchGetMovieDetails } from 'components/API/Api';
 import MoviesDetailsItem from 'components/movieDetails/MoviesDetailsItem';
@@ -19,7 +19,9 @@ export default function MoviesDetails() {
 
   const location = useLocation();
   const from = location.state?.from;
-
+  const setActiveLink = ({ isActive }) => {
+    return !isActive ? styles.addInfo : `${styles.addInfo} ${styles.active}`;
+  };
   return (
     movie && (
       <>
@@ -31,12 +33,22 @@ export default function MoviesDetails() {
             <span className={styles.first}>a</span>dditional information
           </h3>
           <div className={styles.addInfo}>
-            <Link className={styles.link} state={{ from }} to="cast">
+            <NavLink
+              className={setActiveLink}
+              // activeClassName={styles.activeLink}
+              state={{ from }}
+              to="cast"
+            >
               cast
-            </Link>
-            <Link className={styles.link} state={{ from }} to="reviews">
+            </NavLink>
+            <NavLink
+              className={setActiveLink}
+              // activeClassName={styles.activeLink}
+              state={{ from }}
+              to="reviews"
+            >
               reviews
-            </Link>
+            </NavLink>
           </div>
           <Suspense fallback={<h1>loading...</h1>}>
             <Outlet />

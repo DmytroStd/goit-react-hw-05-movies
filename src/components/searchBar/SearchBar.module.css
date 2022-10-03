@@ -21,7 +21,7 @@
     border-bottom-color: orangered;
     border-top-color: orangered;
     border-left-color: orangered;
-    border-right-color: inherit;
+    border-right-color: orangered;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     /* border-color: orangered; */
@@ -47,11 +47,12 @@
     background-color: rgb(31, 30, 30);
     padding: 0;
     padding-left: 8px;
-    border-left-color: inherit;
+    border-left-color: transparent;
     border-bottom-color: orangered;
     border-top-color: orangered;
     border-right-color: orangered;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    outline: none
+    outline: none;
+    border-left: 0px;
 }

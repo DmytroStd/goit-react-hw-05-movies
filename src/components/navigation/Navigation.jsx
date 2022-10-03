@@ -6,15 +6,16 @@ export default function Navigation() {
   const setActiveLink = ({ isActive }) => {
     return !isActive ? styles.navLink : `${styles.navLink} ${styles.active}`;
   };
+
   return (
     <>
       <div className={styles.header}>
         <nav className={styles.nav}>
           <NavLink to="/" className={setActiveLink}>
-            home
+            <span className={styles.first}>h</span>ome
           </NavLink>
           <NavLink to="/movies" className={setActiveLink}>
-            movies
+            <span className={styles.first}>m</span>ovies
           </NavLink>
         </nav>
       </div>

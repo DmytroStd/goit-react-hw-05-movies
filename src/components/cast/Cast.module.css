@@ -4,6 +4,7 @@
 
 .img {
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .list {
@@ -20,9 +21,19 @@
 }
 
 .item {
-    width: 200px;
+    width: 150px;
+    border: 1px solid aliceblue;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.name {
+    margin: 0;
+    margin-bottom: 5px;
 }
 
 .desc {
-    font-size: 12px
+    margin: 0;
+    font-size: 12px;
+    color: orangered;
 }

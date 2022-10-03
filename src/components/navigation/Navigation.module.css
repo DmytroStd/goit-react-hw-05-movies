@@ -20,14 +20,27 @@
     color: aliceblue;
     font-weight: 500;
     border: 1px solid transparent;
-    ;
+
+}
+
+.first {
+    color: orangered;
 }
 
 .navLink:hover {
     border: 1px solid orangered;
-    ;
+
 }
 
 .navLink.active {
     color: orangered;
+    border: 1px solid aliceblue;
 }
+
+.activeLink {
+    color: orangered;
+}
+
+/* .navLink.active>.first {
+    color: aliceblue;
+} */
