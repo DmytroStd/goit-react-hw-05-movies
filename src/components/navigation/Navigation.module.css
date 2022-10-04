@@ -28,7 +28,7 @@
 }
 
 .navLink:hover {
-    border: 1px solid orangered;
+    transform: scale(1.03);
 
 }
 

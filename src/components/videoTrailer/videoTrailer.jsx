@@ -36,7 +36,7 @@ export default function OfficialTrailer() {
                 allow="autoplay; encrypted-media"
                 allowFullScreen
                 title="video"
-                width="800"
+                width="830"
                 height="330"
               />
             </div>
